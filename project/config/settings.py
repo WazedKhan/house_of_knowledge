@@ -11,7 +11,10 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-PROJECT_APPS = []
+PROJECT_APPS = [
+    "common",
+    "core",
+]
 
 THIRD_PARTY_APPS = [
     "rest_framework",
@@ -24,8 +27,6 @@ DJANGO_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "common",
-    "core",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS
