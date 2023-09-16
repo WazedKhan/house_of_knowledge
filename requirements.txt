@@ -9,7 +9,9 @@ Django==4.2.4
 django-address==0.2.8
 django-autoslug==1.9.9
 django-dirtyfields==1.9.2
+django-extensions==3.2.3
 django-phonenumber-field==7.1.0
+djangorestframework==3.14.0
 docutils==0.20.1
 Faker==19.3.1
 furo==2023.8.19
@@ -22,6 +24,7 @@ packaging==23.1
 phonenumbers==8.13.19
 Pygments==2.16.1
 python-dateutil==2.8.2
+pytz==2023.3.post1
 requests==2.31.0
 six==1.16.0
 snowballstemmer==2.2.0
@@ -40,3 +43,4 @@ tqdm==4.66.1
 typing_extensions==4.7.1
 tzdata==2023.3
 urllib3==2.0.4
+Werkzeug==2.3.7
