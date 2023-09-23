@@ -38,12 +38,7 @@ class Branch(BaseModelWithUUIDStatus):
         return self.name
 
     def get_default_manager(self):
-        # set the first created/specific user as default manager
-        manager = User.objects.last()
-        # last is the first created user
-        if manager:
-            return manager.id
-        return None
+        return manager.id if (manager := User.objects.last()) else None
 
 
 class Stock(BaseModelWithUUIDStatus):
