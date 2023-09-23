@@ -1,6 +1,8 @@
 import os
 from pathlib import Path
 
+import dj_database_url
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = "django-insecure--km1wsmc31nfxh_$)u!w+h#718tbpo$=)#euc!j7e8%20st*i5"
@@ -14,6 +16,8 @@ ALLOWED_HOSTS = []
 PROJECT_APPS = [
     "common",
     "core",
+    # "stock",
+    "book",
 ]
 
 THIRD_PARTY_APPS = [
@@ -72,6 +76,13 @@ DATABASES = {
         "NAME": BASE_DIR / "db.sqlite3",
     }
 }
+
+# DATABASES = {
+#     "default": dj_database_url.config(
+#         conn_max_age=600,
+#         conn_health_checks=True,
+#     ),
+# }
 AUTH_USER_MODEL = "core.User"
 
 # Password validation
