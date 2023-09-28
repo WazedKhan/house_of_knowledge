@@ -2,6 +2,7 @@ import uuid
 from django.db import models
 
 from autoslug import AutoSlugField
+from auditlog.registry import auditlog
 
 from common.models import BaseModelWithUID
 
@@ -73,3 +74,7 @@ class Comment(BaseModelWithUID):
 
     def __str__(self):
         return f"Comment by {self.user.username} on {self.page}"
+
+
+# audit log model history
+auditlog.register(Book)
