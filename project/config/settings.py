@@ -18,6 +18,7 @@ PROJECT_APPS = [
     "core",
     # "stock",
     "book",
+    "orm_prac",
 ]
 
 THIRD_PARTY_APPS = [
