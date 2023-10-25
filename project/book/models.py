@@ -3,6 +3,7 @@ from django.db import models
 
 from autoslug import AutoSlugField
 from auditlog.registry import auditlog
+from simple_history.models import HistoricalRecords
 
 from common.models import BaseModelWithUID
 
@@ -34,6 +35,7 @@ class Book(BaseModelWithUID):
     slug = AutoSlugField(populate_from=get_book_slug, unique=True, db_index=True)
     authors = models.ManyToManyField(Author)
     publication_date = models.DateField(blank=True, null=True)
+    history = HistoricalRecords()
 
     def __str__(self):
         return self.title
