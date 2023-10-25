@@ -5,5 +5,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("api-auth/", include("rest_framework.urls")),
     # app urls
-    path("books", include("book.rest.urls")),
+    path("api/v1/books", include("book.rest.urls")),
 ]

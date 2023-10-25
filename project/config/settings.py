@@ -25,6 +25,7 @@ THIRD_PARTY_APPS = [
     "rest_framework",
     "django_extensions",
     "auditlog",
+    "simple_history",
 ]
 
 DJANGO_APPS = [
@@ -47,6 +48,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "auditlog.middleware.AuditlogMiddleware",
+    "simple_history.middleware.HistoryRequestMiddleware",
 ]
 
 ROOT_URLCONF = "config.urls"
