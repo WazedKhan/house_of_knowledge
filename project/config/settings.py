@@ -11,11 +11,20 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# media config
+
+# Base url to serve media files
+MEDIA_URL = "/media/"
+
+# Path where media is stored'
+MEDIA_ROOT = BASE_DIR / "media"
+
 
 # Application definition
 PROJECT_APPS = [
     "common",
     "core",
+    "media",
     # "stock",
     "book",
     "orm_prac",
@@ -23,6 +32,7 @@ PROJECT_APPS = [
 
 THIRD_PARTY_APPS = [
     "rest_framework",
+    "versatileimagefield",
     "django_extensions",
     "auditlog",
     "simple_history",
