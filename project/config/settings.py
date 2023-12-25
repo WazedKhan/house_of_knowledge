@@ -1,6 +1,8 @@
 import os
 from pathlib import Path
 
+import dj_database_url
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = "django-insecure--km1wsmc31nfxh_$)u!w+h#718tbpo$=)#euc!j7e8%20st*i5"
@@ -23,11 +25,17 @@ PROJECT_APPS = [
     "common",
     "core",
     "media",
+    # "stock",
+    "book",
+    "orm_prac",
 ]
 
 THIRD_PARTY_APPS = [
     "rest_framework",
     "versatileimagefield",
+    "django_extensions",
+    "auditlog",
+    "simple_history",
 ]
 
 DJANGO_APPS = [
@@ -49,6 +57,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "auditlog.middleware.AuditlogMiddleware",
+    "simple_history.middleware.HistoryRequestMiddleware",
 ]
 
 ROOT_URLCONF = "config.urls"
@@ -81,6 +91,13 @@ DATABASES = {
         "NAME": BASE_DIR / "db.sqlite3",
     }
 }
+
+# DATABASES = {
+#     "default": dj_database_url.config(
+#         conn_max_age=600,
+#         conn_health_checks=True,
+#     ),
+# }
 AUTH_USER_MODEL = "core.User"
 
 # Password validation

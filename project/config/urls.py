@@ -7,6 +7,8 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("api-auth/", include("rest_framework.urls")),
     path("api/v1/", include("media.rest.urls")),
+    # app urls
+    path("api/v1/books", include("book.rest.urls")),
 ]
 
 if settings.DEBUG:
