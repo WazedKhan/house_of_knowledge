@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:7.2.4-alpine
+
+  django:
+    container_name: house_of_knowledge
+    build:
+      context: ./project
+      dockerfile: Dockerfile
+
+    command: python manage.py runserver 0.0.0.0:8000
+
+    volumes:
+      - ./project:/usr/src/app
+    ports:
+      - "8001:8000"
+    environment:
+      - DEBUG=1
+      - SECRET_KEY=093j151561654185615618564896asfsd5121
+      - ALLOWED_HOST=localhost,127.0.0.1
