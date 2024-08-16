@@ -4,14 +4,14 @@ from django.db import models
 
 from core.choices import UserStatus
 
-from common.models import BaseModelWithUUIDStatus
+from common.models import BaseModelWithUID
 
 from versatileimagefield.fields import PPOIField, VersatileImageField
 
 from media.paths import get_image_path
 
 
-class ImageStorage(BaseModelWithUUIDStatus):
+class ImageStorage(BaseModelWithUID):
     uid = models.UUIDField(
         default=uuid.uuid4,
         editable=False,
